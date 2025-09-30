@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-app
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      papa: pushpa
+  template:
+    metadata:
+      labels:
+        papa: pushpa
+    spec:
+      containers:
+      - name: deploy-app-container
+        image: monikasri237/deployment:blue
+        ports:
+        - containerPort: 80
